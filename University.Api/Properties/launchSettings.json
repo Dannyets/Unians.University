@@ -23,7 +23,7 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "DB_CONNECTION_STRING": "Server=unians-university-api.cwlhm9xdeq10.us-east-2.rds.amazonaws.com;Port=3306;Database=unians_university;Uid=dannyets;Pwd=12345678;"
+        "DB_CONNECTION_STRING": "Server=unians-university.cuh3iqrs4fdb.us-east-1.rds.amazonaws.com;Port=3306;Database=unians_university;Uid=root;Pwd=12345678;"
       },
       "applicationUrl": "http://localhost:5000"
     },

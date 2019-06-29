@@ -1,4 +1,4 @@
-﻿using BaseRepositories.EntityFrameworkCore.Interfaces;
+﻿using BaseRepositories.EntityFrameworkCore.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

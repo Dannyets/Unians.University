@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using BaseRepositories.EntityFrameworkCore.MySql;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,11 +30,11 @@ namespace University.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddTransient<IUniversityRepository, UniversityRepository>();
-
-            Environment.SetEnvironmentVariable("DB_CONNECTION_STRING", "Server=unians-university-api.cwlhm9xdeq10.us-east-2.rds.amazonaws.com;Port=3306;Database=unians_university;Uid=dannyets;Pwd=12345678;");
 
             services.AddDbContext<UniversityDbContext>();
 
