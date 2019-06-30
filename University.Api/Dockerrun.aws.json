@@ -1,6 +1,0 @@
-{
-	"Image": {
-    "Name": "account-id.dkr.ecr.us-east-2.amazonaws.com/repository-name:latest",
-    "Update": "true"
-	}
-}
