@@ -1,12 +1,4 @@
-.vs/
-obj/
-bin/
-*.suo
-*.user
-packages
-*/.DS_Store
-.DS_Store
-*/aws-logger-errors.txt
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
