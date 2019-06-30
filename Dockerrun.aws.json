@@ -1,5 +1,9 @@
 {
   "AWSEBDockerrunVersion": "1",
+  "Authentication": {
+    "Bucket": "danny-docker-configuration",
+    "Key": "config.json"
+  },
   "Image": {
     "Name": "dannyets/unians-university-api:latest",
     "Update": "true"
