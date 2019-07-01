@@ -1,12 +1,13 @@
 {
-  "AWSEBDockerrunVersion": "1",
+  "AWSEBDockerrunVersion": "2",
   "Image": {
     "Name": "dannyets/unians-universirty-api:latest",
     "Update": "true"
   },
   "Ports": [
     {
-      "ContainerPort": 80
+      "ContainerPort": 80,
+      "HostPort": 80
     }
   ]
 }
