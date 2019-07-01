@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "dannyets/unians-universirty-api",
+    "Name": "dannyets/unians-universirty-api:latest",
     "Update": "true"
   },
   "Ports": [
