@@ -58,7 +58,14 @@ namespace University.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-            MySqlDbHelper.MigrateDatabase<UniversityDbContext>(serviceProvider);
+            try
+            {
+                MySqlDbHelper.MigrateDatabase<UniversityDbContext>(serviceProvider);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to migrate database");
+            }
 
             if (env.IsDevelopment())
             {
