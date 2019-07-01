@@ -16,6 +16,18 @@ namespace University.DAL
 
         public DbSet<UniversityDbModel> Universities { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            try
+            {
+                base.OnConfiguring(optionsBuilder);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UniversityDbModel>().HasKey(p => p.Id);
