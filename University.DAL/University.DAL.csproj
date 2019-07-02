@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BaseRepositories.EntityFrameworkCore" Version="3.0.0" />
-    <PackageReference Include="BaseRepositories.EntityFrameworkCore.MySql" Version="3.3.0" />
+    <PackageReference Include="AspNetCore.Infrastructure.Repositories.EntityFrameworkCore" Version="1.0.0" />
+    <PackageReference Include="AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

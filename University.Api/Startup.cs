@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql;
 using AutoMapper;
-using BaseRepositories.EntityFrameworkCore.MySql;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -64,7 +64,7 @@ namespace University.Api
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Failed to migrate database");
+                Console.WriteLine("Failed to migrate database.");
             }
 
             if (env.IsDevelopment())

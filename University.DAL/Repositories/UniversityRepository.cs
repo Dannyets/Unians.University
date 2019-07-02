@@ -1,4 +1,4 @@
-using BaseRepositories.EntityFrameworkCore.Repositories;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Unians.University.DAL.Interfaces;
 using University.DAL;

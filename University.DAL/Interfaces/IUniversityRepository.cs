@@ -1,7 +1,4 @@
-﻿using BaseRepositories.EntityFrameworkCore.Models.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models;
 using University.DAL.Models;
 
 namespace Unians.University.DAL.Interfaces

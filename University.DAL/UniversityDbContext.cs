@@ -1,4 +1,4 @@
-﻿using BaseRepositories.EntityFrameworkCore.MySql;
+﻿using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -15,18 +15,6 @@ namespace University.DAL
         }
 
         public DbSet<UniversityDbModel> Universities { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            try
-            {
-                base.OnConfiguring(optionsBuilder);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
