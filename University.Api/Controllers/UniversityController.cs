@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AspNetCore.Infrastructure.Controllers;
-using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using University.Api.Models;

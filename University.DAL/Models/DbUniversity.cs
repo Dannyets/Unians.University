@@ -2,10 +2,8 @@
 
 namespace University.DAL.Models
 {
-    public class DbUniversity : BaseEntity
+    public class DbUniversity : DbIdEntity
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
     }
 }

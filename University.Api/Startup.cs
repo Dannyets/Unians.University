@@ -1,6 +1,7 @@
 ﻿using System;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore;
-using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.HealthChecks;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models.Interfaces;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
@@ -9,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Repositories.EntityFrameworkCore.HealthChecks;
 using Swashbuckle.AspNetCore.Swagger;
 using University.DAL;
 using University.DAL.Models;
@@ -32,11 +32,12 @@ namespace University.Api
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddTransient<IEfRepository<DbUniversity>, BaseEntityFrameworkCoreRepository<DbUniversity>>();
+            services.AddTransient<IEfRepository<DbUniversity>, BaseInMemoryRepository<DbUniversity>>();
 
-            services.AddDbContext<UniversityDbContext>();
+            //TODO: REMOVE COMMENT ONCE CREATING NEW DATABASE
+            //services.AddDbContext<UniversityDbContext>();
 
-            services.AddTransient<DbContext, UniversityDbContext>();
+            //services.AddTransient<DbContext, UniversityDbContext>();
 
             services.AddHealthChecks()
                     .AddCheck<RepositoryHealthCheck<DbUniversity>>("Repository");
@@ -61,14 +62,15 @@ namespace University.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-            try
-            {
-                MySqlDbHelper.MigrateDatabase<UniversityDbContext>(serviceProvider);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Failed to migrate database.");
-            }
+            //TODO: REMOVE COMMENT ONCE CREATING NEW DATABASE
+            //try
+            //{
+            //    MySqlDbHelper.MigrateDatabase<UniversityDbContext>(serviceProvider);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("Failed to migrate database.");
+            //}
 
             if (env.IsDevelopment())
             {
