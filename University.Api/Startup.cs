@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Repositories.EntityFrameworkCore.HealthChecks;
 using Swashbuckle.AspNetCore.Swagger;
-using Unians.University.DAL.Interfaces;
-using Unians.University.DAL.Repositories;
 using University.DAL;
+using University.DAL.Models;
 
 namespace University.Api
 {
@@ -34,9 +32,14 @@ namespace University.Api
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddTransient<IUniversityRepository, UniversityRepository>();
+            services.AddTransient<IEfRepository<DbUniversity>, BaseEntityFrameworkCoreRepository<DbUniversity>>();
 
             services.AddDbContext<UniversityDbContext>();
+
+            services.AddTransient<DbContext, UniversityDbContext>();
+
+            services.AddHealthChecks()
+                    .AddCheck<RepositoryHealthCheck<DbUniversity>>("Repository");
 
             services.AddSwaggerGen(options =>
             {
@@ -71,6 +74,8 @@ namespace University.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseHealthChecks("/health");
 
             app.UseSwagger();
 

@@ -14,13 +14,13 @@ namespace University.DAL
         {
         }
 
-        public DbSet<UniversityDbModel> Universities { get; set; }
+        public DbSet<DbUniversity> Universities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UniversityDbModel>().HasKey(p => p.Id);
+            modelBuilder.Entity<DbUniversity>().HasKey(p => p.Id);
 
-            modelBuilder.Entity<UniversityDbModel>().HasIndex(p => p.Name);
+            modelBuilder.Entity<DbUniversity>().HasIndex(p => p.Name);
         }
     }
 }

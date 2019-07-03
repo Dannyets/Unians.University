@@ -2,7 +2,7 @@
 
 namespace University.Api.Models
 {
-    public class UniversityApiModel
+    public class ApiUniversity
     {
         public int Id { get; set; }
 

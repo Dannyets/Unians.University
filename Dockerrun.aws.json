@@ -1,5 +1,5 @@
 {
-  "AWSEBDockerrunVersion": "4",
+  "AWSEBDockerrunVersion": "1",
   "Image": {
     "Name": "dannyets/unians-universirty-api:latest",
     "Update": "true"

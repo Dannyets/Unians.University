@@ -1,7 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Unians.University.Api.Models</PackageId>
+    <Authors>Danny Etsebban</Authors>
+    <Company />
+    <Product />
+    <Description>Shared models for unians university api micro-service</Description>
+    <PackageProjectUrl>https://github.com/Dannyets/Unians.University.Api</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Dannyets/Unians.University.Api</RepositoryUrl>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
 </Project>

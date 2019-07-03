@@ -2,7 +2,7 @@
 
 namespace University.DAL.Models
 {
-    public class UniversityDbModel : BaseEntity
+    public class DbUniversity : BaseEntity
     {
         public int Id { get; set; }
 
