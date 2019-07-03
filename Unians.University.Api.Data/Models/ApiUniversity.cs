@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace University.Api.Models
+namespace Unians.University.Api.Data.Models
 {
     public class ApiUniversity
     {

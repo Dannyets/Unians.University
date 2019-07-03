@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using University.DAL.Models;
+using Unians.University.Data.Models;
 
-namespace University.DAL
+namespace Unians.University.Data.Context
 {
     public class UniversityDbContext : BaseMySqlDbContext
     {

@@ -3,10 +3,10 @@ using AspNetCore.Infrastructure.Controllers;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using University.Api.Models;
-using University.DAL.Models;
+using Unians.University.Api.Data.Models;
+using Unians.University.Data.Models;
 
-namespace University.Api.Controllers
+namespace Unians.University.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

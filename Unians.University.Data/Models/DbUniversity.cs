@@ -1,6 +1,6 @@
 ﻿using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models;
 
-namespace University.DAL.Models
+namespace Unians.University.Data.Models
 {
     public class DbUniversity : DbIdEntity
     {

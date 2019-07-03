@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Unians.University.Api.Models</PackageId>
+    <PackageId>Unians.University.Api.Data</PackageId>
     <Authors>Danny Etsebban</Authors>
     <Company />
     <Product />

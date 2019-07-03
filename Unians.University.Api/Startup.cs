@@ -11,10 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
-using University.DAL;
-using University.DAL.Models;
+using Unians.University.Data.Context;
+using Unians.University.Data.Models;
 
-namespace University.Api
+namespace Unians.University.Api
 {
     public class Startup
     {

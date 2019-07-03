@@ -17,16 +17,4 @@
 **/*.jfm
 **/secrets.dev.yaml
 **/values.dev.yaml
-**/.toolstarget# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
-.gitignore# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
-.gitignore# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
-.gitignore# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
-.gitignore
+**/.toolstarget
