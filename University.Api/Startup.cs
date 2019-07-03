@@ -32,12 +32,11 @@ namespace University.Api
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddTransient<IEfRepository<DbUniversity>, BaseInMemoryRepository<DbUniversity>>();
+            services.AddTransient<IEfRepository<DbUniversity>, BaseEntityFrameworkCoreRepository<DbUniversity>>();
 
-            //TODO: REMOVE COMMENT ONCE CREATING NEW DATABASE
-            //services.AddDbContext<UniversityDbContext>();
+            services.AddDbContext<UniversityDbContext>();
 
-            //services.AddTransient<DbContext, UniversityDbContext>();
+            services.AddTransient<DbContext, UniversityDbContext>();
 
             services.AddHealthChecks()
                     .AddCheck<RepositoryHealthCheck<DbUniversity>>("Repository");
@@ -62,15 +61,14 @@ namespace University.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-            //TODO: REMOVE COMMENT ONCE CREATING NEW DATABASE
-            //try
-            //{
-            //    MySqlDbHelper.MigrateDatabase<UniversityDbContext>(serviceProvider);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Failed to migrate database.");
-            //}
+            try
+            {
+                MySqlDbHelper.MigrateDatabase<UniversityDbContext>(serviceProvider);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to migrate database.");
+            }
 
             if (env.IsDevelopment())
             {
