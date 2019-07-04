@@ -29,7 +29,12 @@ namespace Unians.University.Data.Context
             modelBuilder.Entity<DbUniversity>().HasIndex(p => p.Name);
 
             //TODO: REMOVE ONCE NEW DATABASE IS ADDED
-            modelBuilder.Entity<DbUniversity>().HasData(new List<DbUniversity>
+            AddInitialData(modelBuilder);
+        }
+
+        private void AddInitialData(ModelBuilder modelBuilder)
+        {
+            var universities = new List<DbUniversity>
             {
                 new DbUniversity
                 {
@@ -38,7 +43,9 @@ namespace Unians.University.Data.Context
                     CreatedAt = DateTime.UtcNow,
                     LastUdpatedAt = DateTime.UtcNow
                 }
-            });
+            };
+
+            modelBuilder.Entity<DbUniversity>().HasData(universities);
         }
     }
 }

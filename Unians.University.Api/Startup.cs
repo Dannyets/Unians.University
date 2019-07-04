@@ -1,6 +1,7 @@
 ﻿using System;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.HealthChecks;
+using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Helpers;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.Models.Interfaces;
 using AspNetCore.Infrastructure.Repositories.EntityFrameworkCore.MySql;
 using AutoMapper;
@@ -61,14 +62,8 @@ namespace Unians.University.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-            try
-            {
-                MySqlDbHelper.MigrateDatabase<UniversityDbContext>(serviceProvider);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Failed to migrate database.");
-            }
+            //TODO: CHANGE TO MIGRATE ONCE DB IS CREATED
+            DatabaseHelper.EnsureDatabaseCreated<UniversityDbContext>(serviceProvider);
 
             if (env.IsDevelopment())
             {
