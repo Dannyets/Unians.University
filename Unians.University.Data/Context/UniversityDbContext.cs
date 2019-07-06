@@ -39,10 +39,24 @@ namespace Unians.University.Data.Context
                 new DbUniversity
                 {
                     Id = 1,
-                    Name = "טכניון",
+                    Name = "הטכניון",
                     CreatedAt = DateTime.UtcNow,
                     LastUdpatedAt = DateTime.UtcNow
-                }
+                },
+                new DbUniversity
+                {
+                    Id = 2,
+                    Name = "אוניברסיטת תל אביב",
+                    CreatedAt = DateTime.UtcNow,
+                    LastUdpatedAt = DateTime.UtcNow
+                },
+                new DbUniversity
+                {
+                    Id = 3,
+                    Name = "אוניברסיטת בן גוריון",
+                    CreatedAt = DateTime.UtcNow,
+                    LastUdpatedAt = DateTime.UtcNow
+                },
             };
 
             modelBuilder.Entity<DbUniversity>().HasData(universities);
