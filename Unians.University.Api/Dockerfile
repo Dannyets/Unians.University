@@ -5,6 +5,8 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
 COPY ["Unians.University.Api/Unians.University.Api.csproj", "Unians.University.Api/"]
+COPY ["Unians.University.Api.Data/Unians.University.Api.Data.csproj", "Unians.University.Api.Data/"]
+COPY ["Unians.University.Data/Unians.University.Data.csproj", "Unians.University.Data/"]
 RUN dotnet restore "Unians.University.Api/Unians.University.Api.csproj"
 COPY . .
 WORKDIR "/src/Unians.University.Api"
